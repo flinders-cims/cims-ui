@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: relative;
+    justify-content: center;
+    position: relative;
+    padding: 50px 80px;
+    background-color: #eae8ff;
+}
+
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+}
+
+.input-box {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: black;
+}
+
+.input-box input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 80%;
+}
+
+#togglePassword {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #6a5acd;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6a5acd;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #5a4db1;
+}
+
+
+footer a {
+    color: #ffc107; /* Yellow */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-contenttop{
+    background-color: #FFDD00; /* Bright Yellow */
+    padding: 30px 20px;
+    margin-top: 10px;
+}
+footer .footer-contentbottom {
+    background-color: #111;
+    padding: 19px 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-link">HOME</a>
+        <div class="login-box">
+            <h2>LOGIN</h2>
+            <form id="loginForm">
+                <div class="input-box">
+                    <label for="username">Username *</label>
+                    <input type="email" id="username" name="username" required placeholder="Enter your email">
+                </div>
+                <div class="input-box">
+                    <label for="password">Password *</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        <span id="togglePassword" class="toggle-password">Show</span>
+                    </div>
+                </div>
+                <button type="submit" id="loginButton">Login</button>
+            </form>
+        </div>
+    </div>
+        <footer>
+            <div class="footer-contenttop">
+            </div>
+            <div class="footer-contentbottom">
+                <p>Contact us at <a href="mailto:chemorder@flinders.edu.au">chemorder@flinders.edu.au</a> | +61 8 8201 3911</p>
+            </div>
+        </footer>
+        <script src="js/login.js"></script> 
+</body>
+</html>
