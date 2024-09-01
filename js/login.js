@@ -54,10 +54,12 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     },
     body: JSON.stringify({ username: username, password: password })
 })
-.then(response => response.json())
+.then(response => response.text())
 .then(data => {
     if (data) {
         alert('Login successful! Token: ' + data);
+        console.log(response)
+        console.log(data)
     } else {
         alert('Invalid email or password. Please try again.');
     }
