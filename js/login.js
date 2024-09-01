@@ -14,7 +14,7 @@ document.getElementById("togglePassword").addEventListener("click", function() {
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    var email = document.getElementById("username").value;
+    var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
     var passwordRequirements = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$/;
@@ -47,17 +47,17 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     //     console.error('Error:', error);
     //     alert('An error occurred. Please try again later.');
     // });
-    fetch('https://cims-web-app-sample-b6bmeuh5hsa2fsb6.australiasoutheast-01.azurewebsites.net/api/login', {
+    fetch('flinders-cims-api-dev.azurewebsites.net/cims/user/login', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ email: email, password: password })
+    body: JSON.stringify({ username: username, password: password })
 })
 .then(response => response.json())
 .then(data => {
-    if (data.token) {
-        alert('Login successful! Token: ' + data.token);
+    if (data) {
+        alert('Login successful! Token: ' + data);
     } else {
         alert('Invalid email or password. Please try again.');
     }
