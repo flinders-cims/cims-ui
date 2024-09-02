@@ -16,7 +16,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-
+    var url = "https://flinders-cims-api-dev.azurewebsites.net/cims/user/login"
     // var passwordRequirements = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$/;
 
     // if (!passwordRequirements.test(password)) {
