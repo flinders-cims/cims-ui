@@ -17,7 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    var passwordRequirements = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$/;
+    // var passwordRequirements = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$/;
 
     // if (!passwordRequirements.test(password)) {
     //     alert("Password must be at least 10 characters long, contain at least one uppercase letter, one lowercase letter, and one number.");
@@ -47,6 +47,10 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     //     console.error('Error:', error);
     //     alert('An error occurred. Please try again later.');
     // });
+const data = {
+    username: username,
+    password: password
+};
 fetch(url, {
     method: 'POST',
     headers: {
