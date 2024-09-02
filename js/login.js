@@ -47,27 +47,23 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     //     console.error('Error:', error);
     //     alert('An error occurred. Please try again later.');
     // });
-    fetch('flinders-cims-api-dev.azurewebsites.net/cims/user/login', {
+fetch(url, {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     },
-    body: JSON({ username: username, password: password })
+    body: JSON.stringify(data), // Convert the JavaScript object to a JSON string
 })
-.then(response => response.text())
-.then(data => {
-    if (data) {
-        alert('Login successful! Token: ' + data);
-        console.log(response)
-        console.log(data)
-    } else {
-        alert('Invalid email or password. Please try again.');
+.then(response => {
+    if (!response.ok) {
+        return response.text().then(text => { throw new Error(text); });
     }
+    return response.text(); // Extract the response body as a string
 })
-.catch(error => {
-    console.error('Error:', error);
-    alert('An error occurred. Please try again later.');
-});
-
+.then(data => {
+    console.log('Success:', data); // Handle the success case
+})
+.catch((error) => {
+    console.error('Error:', error.message); // Handle the error case
 });
 
