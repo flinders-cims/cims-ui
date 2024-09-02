@@ -70,4 +70,5 @@ fetch(url, {
 .catch((error) => {
     console.error('Error:', error.message); // Handle the error case
 });
+});
 
