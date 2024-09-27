@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const signupBtn = document.querySelector(".signup-btn");
     const loginBtn = document.querySelector(".login-btn");
 
+    signupBtn.addEventListener("click", function () {
+        window.location.href = "Signup.html"; // Replace with the sign-up page URL
+    });
 
     loginBtn.addEventListener("click", function () {
         window.location.href = "../Login.html"; // Replace with the login page URL
     });
 });
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the form from submitting
 
     let isValid = true;
 
@@ -59,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Form is valid, you can submit it here or show success message
         alert('Signup Successful!');
     }
-
+});
 
 function setError(element, message) {
     const parent = element.parentElement;
