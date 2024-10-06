@@ -9,7 +9,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
         username: username,
         password: password
     });
-    const apiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/user/logins?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+    const apiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/user/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
 
 fetch(apiUrl, {
     method: 'POST',
