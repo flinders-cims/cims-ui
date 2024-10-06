@@ -1,0 +1,170 @@
+
+.header {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #FFCC00, rgb(0, 40, 85));
+    color: #000000;
+
+}
+.logo {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    height: 90px;
+    WIDTH: 90px;
+    margin-right: 10px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    flex: 5; /* Takes the remaining height */
+}
+.nav-item{
+
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex: 2;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav-links {
+    list-style: none;
+    display: ruby;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Center the container */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/cims-ui/img/back4.jpg'); /* Replace with your texture image URL */
+    background-size:cover ;/* Ensure the image covers the whole body */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    background-position: center; /* Center the image */
+}
+
+/* Container for login */
+#login-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Header styling */
+#login-container h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Form divs and labels */
+form div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* Focus state for input */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #2193b0;
+}
+
+/* Submit button styling */
+button {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.66), rgba(0, 86, 179, 0.66));
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    outline: none;
+}
+
+/* Button hover effect */
+button:hover {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    transform: translateY(-3px);
+}
+
+/* Error and status messages */
+#message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #e74c3c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    #login-container {
+        padding: 20px 15px;
+    }
+}
+
+.footer2 {
+    background-color: #002855;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.footer2 p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+}
