@@ -18,14 +18,19 @@ fetch(apiUrl, {
     }
 })
 .then(response => {
-    return response.text().then(text => {
-        if (response.ok && text.toLowerCase().includes('login successful')) {
-            window.location.href = 'ResearchStaffdash.html';
-        } else {
-            document.getElementById('message').textContent = 'Login failed: ' + text;
-        }
-    });
-})
+        return response.json().then(data => { // assuming API returns JSON
+            if (response.ok) {
+                // Store userId in localStorage
+                localStorage.setItem('userId', data.userId);
+
+                // Redirect to dashboard if login is successful
+                window.location.href = 'ResearchStaffdash.html';
+            } else {
+                // If response is not OK, show login failure message
+                document.getElementById('message').textContent = 'Invalid credentials. Please try again.';
+            }
+        });
+    })
 .catch(error => {
     document.getElementById('message').textContent = 'An error occurred: ' + error.message;
     console.error('Error during login:', error);
