@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researches - Flinders Cims</title>
+    <link rel="stylesheet" href="/Css/research.css"> 
+    <link rel="stylesheet" href="/Css/ResearchStaffdash.css"> 
+</head>
+<header>
+    <div class="logo">
+        <img src="/img/logo2.png" alt="Flinders Cims Logo">
+        <h1 class="logo">FlindersCIMS</h1>
+    </div>
+    <div class="header-right">
+        <a href="ResearchStaffdash.html" class="home-button">Home</a>
+        <a href="index.html" class="logout-button">Logout</a>
+        <div class="header-right">
+            <div class="nav.image-button" id="profile">
+                <div class="image-button"><img src="/img/U3.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+        <main>
+            <div class="research-container">
+                <div class="header-row">
+                    <h2>Researches</h2>
+                    <button id="button-add-research">Add Research</button>
+                </div>
+                <table class="research-table" id="researchTable">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Service Request</th>
+                            <th>Start Date</th>
+                            <th>Expected end date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Placeholder rows for research data -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- Additional rows will be added here dynamically using JavaScript -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="page-button" id="prevBtn" disabled>&laquo;</button>
+                    <button class="page-button" id="nextBtn">&raquo;</button>
+                </div>
+            </div>
+            <div id="research-modal" class="research-popup" style="display: none;">
+                <div class="research-popup-content" id="research-popup-content">
+                    <span class="research-close">&times;</span>
+                    <h2 id="research-modal-heading">Add Research</h2>
+            
+                    <!-- Form element to submit research data -->
+                    <form id="research-form">
+                        <label for="research-title">Research Title:</label>
+                        <input type="text" id="research-title" name="title" placeholder="Enter Research Title" required>
+            
+                        <label for="research-description">Description:</label>
+                        <textarea id="research-description" name="description" rows="4" placeholder="Enter Research Description" required></textarea>
+            
+                        <label for="research-start-date">Start Date:</label>
+                        <input type="date" id="research-start-date" name="startDate" required>
+            
+                        <label for="research-end-date">Expected End Date:</label>
+                        <input type="date" id="research-end-date" name="expectedEndDate" required>
+            
+                        <button type="submit" id="research-submit">Submit</button>
+                    </form>
+            
+                    <!-- Success message -->
+                    <div id="research-success-message" style="display: none; color: green;">Research saved successfully!</div>
+                </div>
+            </div>
+            
+        </main>
+        
+</div>
+    <script src="/Javascript/research.js"></script>
+    <script src="/Javascript/add-research-popup.js"></script>
+<footer class="footer2">
+    <p>Contact us at: flindersCIMS@flinders.edu.au | +61 8 8201 3911</p>
+</footer>
+</html>

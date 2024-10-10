@@ -62,3 +62,20 @@ document.querySelector(".logout-button").addEventListener('click', function() {
     // Clear all local storage data
     localStorage.clear();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var researchCard = document.getElementById('researchCard');
+
+    // Check if the element exists before adding event listener
+    if (researchCard) {
+        researchCard.addEventListener('click', function() {
+            console.log("Research card clicked!"); // Debug log to verify click event
+            window.location.href = 'research.html'; // Redirect to research.html when clicked
+        });
+    } else {
+        console.error("researchCard not found!"); // Log if the element is not found
+    }
+});
+
+
+
