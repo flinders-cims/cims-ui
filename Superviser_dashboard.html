@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flinders CIMS Dashboard</title>
+  <link rel="stylesheet" href="/Css/Superviser.css">
+</head>
+<header>
+  <div class="logo">
+    <img src="/img/logo2.png" alt="Flinders Cims Logo">
+    <h1 class="logo">FlindersCIMS</h1>
+  </div>
+  <div class="header-right">
+    <a href="index.html" class="image-button"><img src="/img/home2.png" alt="Dashboard">Dashboard</a>
+    <a href="#" class="image-button"><img src="/img/power-icon.png" alt="Power Icon"></a>
+    <div class="header-right">
+      <div class="nav.image-button" id="profile">
+        <div class="image-button"><img src="/img/U3.png" alt="dropdown-menu"><button onclick="fetchUserDetails()">Get User Details</button></div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+<main class="video-background">
+  <div class="overlay"></div>
+  <video autoplay muted loop id="background-video">
+    <source src="/img/v2.mp4" type="video/mp4">
+  </video>
+  <div class="dashboard-header">
+    <h1 id="userGreeting">hello</h1>
+  </div>
+
+  <section class="overview">
+    <div class="card">
+      <h2 id="storagelocation">0</h2>
+      <p>Storage Location</p>
+    </div>
+    <div class="card">
+      <h2 id="stockInHand">0</h2>
+      <p>Stock In Hand</p>
+    </div>
+    <div class="card">
+      <h2 id="disposedchemical">0</h2>
+      <p>Disposed chemicals</p>
+    </div>
+  </section>
+
+  <div class="dashboard-header">
+    <h2>Service Request Details</h2>
+  </div>
+  <section class="overview">
+    <div class="card">
+      <h2 id="pendingRequests">0</h2>
+      <p>Pending Requests</p>
+    </div>
+    <div class="card">
+      <h2 id="approvedRequests">0</h2>
+      <p>Approved Requests</p>
+    </div>
+    <div class="card">
+      <h2 id="RejectedRequests">0</h2>
+      <p>Rejected Requests</p>
+    </div>
+    <div class="card">
+      <h2 id="closedRequests">0</h2>
+      <p>Closed Requests</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer2">
+  <p>Contact us at: flindersCIMS@flinders.edu.au | +61 8 8201 3911</p>
+</footer>
+
+<script src="/Javascript/Superviser.js"></script>
+
+</body>
+</html>
