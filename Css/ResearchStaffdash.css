@@ -6,7 +6,6 @@ body {
 }
 
 header {
-height: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,13 +227,4 @@ body{
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 20px;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 50%;
-    z-index: 5;
 }
