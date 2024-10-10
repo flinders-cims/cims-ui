@@ -17,22 +17,21 @@ fetch(apiUrl, {
         'Content-Type': 'application/json',
     }
 })
-.then(response => {
-        return response.json().then(data => { // assuming API returns JSON
-            if (response.ok) {
-                // Store userId in localStorage
-                localStorage.setItem('userId', data.userId);
+    .then(response => response.json()) // Parse the JSON response
+    .then(data => {
+        if (data.userId) { // Assuming a valid response contains userId
+            // Store userId in localStorage
+            localStorage.setItem('userId', data.userId);
 
-                // Redirect to dashboard if login is successful
-                window.location.href = 'ResearchStaffdash.html';
-            } else {
-                // If response is not OK, show login failure message
-                document.getElementById('message').textContent = 'Invalid credentials. Please try again.';
-            }
-        });
+            // Redirect to dashboard if login is successful
+            window.location.href = 'ResearchStaffdash.html';
+        } else {
+            // If the login fails, show the failure message
+            document.getElementById('message').textContent = 'Invalid credentials. Please try again.';
+        }
     })
-.catch(error => {
-    document.getElementById('message').textContent = 'An error occurred: ' + error.message;
-    console.error('Error during login:', error);
-});
+    .catch(error => {
+        document.getElementById('message').textContent = 'Invalid credentials. Please try again.';
+        console.error('Error during login:', error);
+    });
 });
