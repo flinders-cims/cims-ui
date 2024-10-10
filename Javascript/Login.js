@@ -22,6 +22,8 @@ fetch(apiUrl, {
         if (data.userId) { // Assuming a valid response contains userId
             // Store userId in localStorage
             localStorage.setItem('userId', data.userId);
+            console.log(data);
+             localStorage.setItem("userName",data.firstName+" "+data.lastName);
 
             // Redirect to dashboard if login is successful
             window.location.href = 'ResearchStaffdash.html';
@@ -31,7 +33,7 @@ fetch(apiUrl, {
         }
     })
     .catch(error => {
-        document.getElementById('message').textContent = 'Invalid credentials. Please try again.';
+        document.getElementById('message').textContent =  error+'Invalid credentials. Please try again.';
         console.error('Error during login:', error);
     });
 });
