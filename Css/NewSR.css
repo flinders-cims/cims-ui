@@ -1,0 +1,341 @@
+
+.nav-item{
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex: 2;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav-links {
+    list-style: none;
+    display: ruby;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+.header{
+    height: 7%;
+    width: 100%;
+    position: fixed;
+    Left: 0;
+    top: 0;
+    z-index: 900;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 10px 0;
+    background-color: #00274d;
+    color: #ffffff;
+}
+
+.logo {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    height: 90px;
+    WIDTH: 90px;
+    margin-right: 10px;
+}
+
+.header-menu .user-icon {
+    width: 100px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+.container {
+    margin: 100px auto;
+    max-width: 700px;
+}
+
+.cas-input {
+    width: 50px;
+    padding: 1px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 20px;
+}
+.date-box {
+    text-align: left;
+    padding: 1px;
+    border-radius: 4px;
+    background: #fff;
+}
+#current-date{
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.8);
+    }
+}
+/* Form container */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section heading */
+form h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Tips link */
+form a {
+    font-size: 14px;
+    color: #0073e6;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-weight: 500;
+    margin: 15px 0 5px;
+}
+
+/* Input styling */
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Checkbox label */
+.checkbox-label {
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Date of birth section */
+.dob-container {
+    display: flex;
+    gap: 10px;
+}
+
+.dob-container select {
+    flex: 1;
+}
+
+/* Required field indicator */
+label::after {
+    content: '*';
+    color: red;
+    margin-left: 5px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="range"] {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+#riskLabel {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Placeholder color */
+input::placeholder {
+    color: #aaa;
+}
+
+.submit {
+    text-align: center;
+}
+/* Stylish Submit Button */
+.submit-btn {
+    background-color: #0e06ff;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+}
+
+/* Hover Effect */
+.submit-btn:hover {
+    background-color: #3700b3; /* Darker purple on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+/* Focus Effect */
+.submit-btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5); /* Purple outline */
+}
+
+
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+
+
+
+.footer2 {
+    background-color: #002855;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.footer2 p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Label Styling */
+label {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Range Input Styling */
+input[type="range"] {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+/* Risk Output Styling */
+.risk-output {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green; /* Default color for Low risk */
+}
+
+/* Additional Styling for Responsiveness */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+
+    input[type="range"] {
+        width: 100%;
+    }
+}
+
+/*dropdown for Hazard*/
+.multi-select {
+    position: relative;
+}
+
+.select-box {
+    display: block;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.placeholder {
+    font-size: 16px;
+    color: #999;
+}
+
+.options-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1;
+}
+
+.options-container label {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.options-container label:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#toxicEffectsContainer {
+    margin-top: 20px;
+}
