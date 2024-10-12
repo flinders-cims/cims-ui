@@ -31,10 +31,11 @@ jobs:
           api_location: "" 
           output_location: "." 
 
+      # Trigger backend workflow after frontend deployment completes
       - name: Trigger Backend Workflow
         run: |
           curl -X POST \
-            -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.BACKEND_REPO_PAT }}" \
             https://api.github.com/repos/<backend_owner>/<backend_repo>/dispatches \
             -d '{"event_type": "trigger-backend-deploy"}'
