@@ -10,27 +10,11 @@ on:
       - cims-ui-dev
 
 jobs:
-  build_and_deploy:
+  trigger_backend:
     runs-on: ubuntu-latest
-    name: Build and Deploy Frontend
+    name: Trigger Backend Pipeline
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-
-      - name: Build and Deploy to Azure Static Web Apps
-        id: deploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_SMOKE_022D95100 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/" 
-          api_location: "" 
-          output_location: "." 
-
-      # Trigger the backend workflow after successful frontend deployment
       - name: Trigger Backend Pipeline
         run: |
           curl -X POST \
@@ -38,6 +22,53 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.BACKEND_REPO_PAT }}" \
             https://api.github.com/repos/flinders-cims/cims-api-backend-services/dispatches \
             -d '{"event_type": "trigger-backend-deploy"}'
+
+      - name: Wait for Backend Deployment Completion
+        id: wait_for_backend
+        run: |
+          BACKEND_STATUS="in_progress"
+          ATTEMPTS=0
+          MAX_ATTEMPTS=20  # Adjust the number of retries as needed
+          while [[ "$BACKEND_STATUS" != "completed" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
+            echo "Checking backend pipeline status (attempt $ATTEMPTS)..."
+            BACKEND_STATUS=$(curl -s \
+              -H "Accept: application/vnd.github.v3+json" \
+              -H "Authorization: Bearer ${{ secrets.BACKEND_REPO_PAT }}" \
+              https://api.github.com/repos/flinders-cims/cims-api-backend-services/actions/runs | 
+              jq -r '.workflow_runs[0].status')
+
+            if [[ "$BACKEND_STATUS" == "completed" ]]; then
+              echo "Backend pipeline completed successfully."
+              break
+            fi
+            sleep 30  # Wait for 30 seconds before checking again
+            ((ATTEMPTS++))
+          done
+
+          if [[ "$BACKEND_STATUS" != "completed" ]]; then
+            echo "Backend pipeline did not complete within the expected time."
+            exit 1
+          fi
+
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Frontend
+    needs: trigger_backend  # Ensures this job runs only after 'trigger_backend'
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Build and Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_SMOKE_022D95100 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "/" 
+          api_location: "" 
+          output_location: "."
 
   close_pull_request:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
