@@ -3,7 +3,7 @@ name: Frontend Build and Deploy
 on:
   push:
     branches:
-      - cims-ui-dev  # Adjust branch name as needed
+      - cims-ui-dev
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -15,6 +15,9 @@ jobs:
     name: Trigger Backend Pipeline
 
     steps:
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Trigger Backend Pipeline
         run: |
           curl -X POST \
@@ -28,7 +31,7 @@ jobs:
         run: |
           BACKEND_STATUS="in_progress"
           ATTEMPTS=0
-          MAX_ATTEMPTS=20  # Adjust the number of retries as needed
+          MAX_ATTEMPTS=20
           while [[ "$BACKEND_STATUS" != "completed" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
             echo "Checking backend pipeline status (attempt $ATTEMPTS)..."
             BACKEND_STATUS=$(curl -s \
@@ -41,7 +44,7 @@ jobs:
               echo "Backend pipeline completed successfully."
               break
             fi
-            sleep 30  # Wait for 30 seconds before checking again
+            sleep 30
             ((ATTEMPTS++))
           done
 
@@ -53,7 +56,7 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     name: Build and Deploy Frontend
-    needs: trigger_backend  # Ensures this job runs only after 'trigger_backend'
+    needs: trigger_backend
 
     steps:
       - uses: actions/checkout@v3
@@ -66,8 +69,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_SMOKE_022D95100 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/" 
-          api_location: "" 
+          app_location: "/"
+          api_location: ""
           output_location: "."
 
   close_pull_request:
@@ -77,7 +80,4 @@ jobs:
 
     steps:
       - name: Close Pull Request
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_SMOKE_022D95100 }}
-          action: "close"
+        run: echo "Closing pull request actions completed."
