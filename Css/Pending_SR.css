@@ -10,6 +10,7 @@
     cursor: pointer;
     transition: color 0.3s ease;
 }
+
 .nav-links {
     list-style: none;
     display: ruby;
