@@ -1,266 +1,122 @@
-
-.nav-item{
-    padding: 1%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    flex: 2;
-    color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-
-.nav-links {
-    list-style: none;
-    display: ruby;
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-}
-.header{
-
-    height: 7%;
-    width: 100%;
-    position: fixed;
-    Left: 0;
-    top: 0;
-    z-index: 900;
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    padding: 10px 0;
-    background-color: #00274d;
-    color: #ffffff;
-}
-
-.logo {
-    height: 100%;
+/* Reset some default browser styles */
+* {
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo img {
-    height: 90px;
-    WIDTH: 90px;
-    margin-right: 10px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header-menu .user-icon {
-    width: 100px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-}
-.container {
-
-    padding: 50px;
-    margin: 100px auto;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column; /* Adjust to column for vertical layout */
-    width: 100%;
-}
-
-
-
-/* General styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.4);
-    }
-    to {
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.8);
-    }
-}
-/* Form container */
-#pending-request-form {
-    flex: 1; /* Give form most of the available space */
-    padding: 1rem;
-    border-radius: 5px;
-    margin: 1rem;
-}
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-.form-section {
+.header {
     display: flex;
-    flex-direction: column; /* Create horizontal layout for each section */
     justify-content: space-between;
-    margin-bottom: 1rem;
-}
-/* Section heading */
-form h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Tips link */
-form a {
-    font-size: 14px;
-    color: #0073e6;
-    text-decoration: none;
-}
-
-form a:hover {
-    text-decoration: underline;
-}
-
-/* Label styling */
-label {
-    display: block;
-    font-weight: 500;
-    margin: 15px 0 5px;
-}
-.submit {
-    text-align: center;
-}
-/* Stylish Submit Button */
-.submit-btn {
-    background-color: #0e06ff;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    align-items: center;
+    background-color: #003366;
+    color: white;
     padding: 10px 20px;
 }
 
-/* Hover Effect */
-.submit-btn:hover {
-    background-color: #3700b3; /* Darker purple on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
-    transform: translateY(-3px); /* Lift effect */
-}
-
-/* Focus Effect */
-.submit-btn:focus {
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5); /* Purple outline */
-}
-
-
-.breadcrumb {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #444;
-}
-
-
-
-
-.footer2 {
-    background-color: #002855;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
-.footer2 p {
-    margin: 0;
-    padding: 10px;
-    font-size: 14px;
-    color: #ffffff;
-}
-
-.slider-container {
+.header .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
-/* Label Styling */
-label {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-
-.options-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    display: none;
-    z-index: 1;
-}
-
-.options-container label {
-    display: block;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.options-container label:hover {
-    background-color: #f1f1f1;
-}
-
-input[type="checkbox"] {
+.header img {
+    height: 50px;
     margin-right: 10px;
 }
 
-#toxicEffectsContainer {
-    margin-top: 20px;
+.nav-item {
+    font-size: 18px;
 }
 
+.nav-links {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
 
+.nav-links:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+    color: #666;
+}
 
 .form-content {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
 }
 
 .form-left, .form-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    width: 48%;
 }
 
-.form-left label, .form-right label {
+label {
+    font-weight: bold;
     margin-top: 10px;
+    display: block;
 }
 
-.submit {
-    text-align: center;
-    margin-top: 20px;
-}
+#SR_NO, #Chemical-Name, #Research-Title, #date, #Expected_date, #Quantity,
+#Staff-Name, #Status, #risk, #hazard, #chemical_toxic {
+    font-size: 16px;
+    margin: 5px 0 15px 0;
 
-.submit button {
-    margin: 0 10px;
-    padding: 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 textarea {
     width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.submit {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.submit button {
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit button:hover {
+    background-color: #00509e;
 }
 
 .footer2 {
+    background-color: #003366;
+    color: white;
     text-align: center;
+    padding: 10px 0;
     margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer2 p {
+    margin: 0;
 }
