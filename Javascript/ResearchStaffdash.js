@@ -59,12 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 });
 
-// Profile dropdown toggle functionality
-document.getElementById('profile').addEventListener('click', function() {
-    const dropdown = document.getElementById('dropdown-menu');
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-});
-
 document.addEventListener('click', function(e) {
     const profileButton = document.getElementById('profile');
     const dropdown = document.getElementById('dropdown-menu');
