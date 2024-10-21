@@ -74,9 +74,6 @@ h1{
 
 
 
-h1 {
-    margin-top: 0;
-}
 
 .overview, .service-requests {
     display: flex;
@@ -227,4 +224,14 @@ body{
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 20px;
+}
+.request-link {
+    color: white;            /* Makes the text white */
+    text-decoration: none;   /* Removes the underline */
+    font-size: 16px;         /* Optional: Adjust font size */
+    font-weight: bold;       /* Optional: Make the text bold */
+}
+
+.request-link:hover {
+    color: lightgray;        /* Optional: Changes color on hover */
 }

@@ -28,7 +28,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
             // Store userId and userName in localStorage
             localStorage.setItem('userId', data.userId);
             localStorage.setItem("userName", data.firstName + " " + data.lastName);
-
+            localStorage.setItem("managerUserName",data.managerUserName);
             // Redirect to dashboard if login is successful
             window.location.href = 'ResearchStaffdash.html';
         }

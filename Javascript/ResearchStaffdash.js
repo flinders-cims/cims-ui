@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Define the API endpoint for fetching all researches and stock data
-    const researchApiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/research/getAll/${userId}`;
-    
+    const researchApiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/research/getCount/${userId}`;
+    const pendingRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/pending`;
+
+
+
     // Fetch data from the research API
     fetch(researchApiUrl, {
         method: "GET",
@@ -28,16 +31,32 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => {
         // Count the number of researches by researchId
-        const totalResearches = data.length;
+        const totalResearches = data;
         document.querySelector(".overview .card:nth-child(1) h2").textContent = totalResearches;
 
-        // Count the total stock in hand (assuming 'stockInHand' is part of the JSON response)
-        const totalStock = data.reduce((total, research) => total + (research.stockInHand || 0), 0);
-        document.querySelector(".overview .card:nth-child(2) h2").textContent = totalStock;
+    
     })
     .catch(error => {
         console.error("Error fetching data from API:", error);
     });
+
+
+
+  // Fetch data from the pending service requests API to count the number of pending requests
+  fetch(pendingRequestsApiUrl, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+.then(response => response.json())
+.then(data => {
+    // Count the number of pending service requests
+    const totalPendingRequests = data.length;
+    document.getElementById("pending").textContent = totalPendingRequests;})
+.catch(error => {
+    console.error("Error fetching pending service request data:", error);
+});
 });
 
 // Profile dropdown toggle functionality

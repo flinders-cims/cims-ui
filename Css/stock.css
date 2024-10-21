@@ -1,0 +1,132 @@
+/* chemicals.css */
+
+/* Basic Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    color: white;
+    padding: 5px 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.user-icon img {
+    height: 30px;
+    border-radius: 50%;
+}
+
+.breadcrumbs {
+    margin: 10px;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+}
+
+.breadcrumbs span {
+    color: #555;
+}
+
+/* Chemicals Container Styles */
+.chemicals-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.chemicals-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.chemicals-table th,
+.chemicals-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.chemicals-table th {
+    background-color: #66b3ff;
+    color: #003366;
+    font-weight: bold;
+}
+
+.chemicals-table td {
+    background-color: #ccf2ff;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.page-button {
+    background-color: #003366;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.page-button:hover {
+    background-color: #002244;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: auto;
+    font-size: 12px;
+}
