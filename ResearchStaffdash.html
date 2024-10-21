@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flinders Cims Dashboard</title>
+    <title>Flinders Cims Research Dashboard</title>
     <link rel="stylesheet" href="/Css/ResearchStaffdash.css">
 </head>
 <header>
     <div class="logo">
-        <img src="/img/logo2.png" alt="Flinders Cims Logo">
+        <img src="img/logo2.png" alt="Flinders Cims Logo">
         <h1 class="logo">FlindersCIMS</h1>
     </div>
     <div class="header-right">
@@ -25,6 +25,7 @@
 </header>
 <body>
 <main class="video-background">
+    <div class="overlay"></div>
     <video autoplay muted loop id="background-video">
         <source src="/img/v2.mp4" type="video/mp4">
     </video>
@@ -46,8 +47,10 @@
     </div>
     <section class="overview">
 
-        <div class="request-card">Create Request</div>
-        <div class="card"> <h2>0</h2><p>Pending Request</div>
+        <div class="request-card"><a href="NewSR.html" class="request-link">Create Request</a></div>
+        <div class="card"> <a href="your-target-url.html" class="request-link">
+            <h2 id="pending">0</h2><p>Pending Request</p></a></div>
+    
         <div class="card"> <h2>0</h2><p>Approved Request</p></div>
         <div class="card"> <h2>0</h2><p>Closed Request</p></div>
     </section>
