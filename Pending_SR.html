@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flinders Cims - Create Request</title>
+    <title>Flinders Cims - pending Request</title>
     <link rel="stylesheet" href="Css/Pending_SR.css">
 </head>
 <body>
@@ -18,57 +17,45 @@
     </nav>
 </header>
 <div class="breadcrumb">
-    Dashboard &gt; pending Request
+    <a href="">Dashboard</a> &gt;
+    <a href="/pending-requests">pending Request</a>
 </div>
-<div class="container" >
+
+<div class="container">
     <form id="pending-request-form">
-        <div id="SR_NO">SR_01</div>
+        <div class="form-header">
+            <button class="close-btn" onclick="closeForm()">×</button>
+        </div>
 
         <div class="form-content">
-
             <!-- Left section -->
             <div class="form-left">
-
-                <label for="Chemical-Name">Chemical Name :</label>
-                <div id="Chemical-Name"> chemical_name</div>
-
-                <label for="Research-Title">Research Title:</label>
-                <div id="Research-Title">research</div>
-                <label for="date">Date:</label>
-                <div id="date">14/10/2024</div>
-
-                <label for="Expected_date">Expected Date :</label>
-                <div id="Expected_date">20/10/2024</div>
-
-                <label for="Quantity">Quantity :</label>
-                <div id="Quantity">2</div>
-
+                <div class="value" id="SR_NO">SR_01</div>
+                <div class="value" id="chemical_name">Chemical Name: chemical_name</div>
+                <div class="value" id="research">Research Title: research</div>
+                <div class="value" id="date">Date: 14/10/2024</div>
+                <div class="value" id="expected_date">Expected Date: 20/10/2024</div>
+                <div class="value" id="quantity">Quantity: 2</div>
             </div>
 
             <!-- Right section -->
             <div class="form-right">
-                <label for="Staff-Name">Staff Name :</label>
-                <div id="Staff-Name">Mansi</div>
 
-                <label for="Status">Status :</label>
-                <div id="Status">pending</div>
-
-                <label for="risk">Risk Score :</label>
-                <div id="risk">5</div>
-
-                <label for="hazard">Hazard Type :</label>
-                <div id="hazard"></div>
-
-                <label for="chemical_toxic">Chemical Toxic :</label>
-                <div id="chemical_toxic">yes</div>
+                <div class="value" id="name">Staff Name: Mansi</div>
+                <div class="value" id="status">Status: pending</div>
+                <div class="value" id="risk">Risk Score: 5</div>
+                <div class="value" id="type">Hazard Type: [Insert Hazard Type]</div>
+                <div class="value" id="toxic">Chemical Toxic: yes</div>
 
                 <div id="commentBox">
                     <label for="Comment">Comment:</label>
                     <textarea id="Comment" rows="5" placeholder="ADD Comments"></textarea>
                 </div>
-            </div>
-        </div>
 
+
+            </div>
+
+        </div>
         <div class="submit">
             <button type="submit" id="approve" class="submit-btn">Approve</button>
             <button type="submit" id="higher_approve" class="submit-btn">Higher Approve</button>
@@ -77,9 +64,11 @@
     </form>
 </div>
 
+
 <footer class="footer2">
     <p>Contact us at chemorder@flinders.edu.au | +61 8 8201 3911</p>
 </footer>
+
 <script src="Javascript/Pending_SR.js"></script>
 
 </body>
