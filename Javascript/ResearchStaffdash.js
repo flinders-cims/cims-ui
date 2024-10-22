@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Define the API endpoint for fetching all researches and stock data
     const researchApiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/research/getCount/${userId}`;
     const pendingRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/pending`;
-
+    const approvedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/approved`;
+    const closedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/Closed`;
 
 
     // Fetch data from the research API
@@ -57,16 +58,40 @@ document.addEventListener("DOMContentLoaded", function() {
 .catch(error => {
     console.error("Error fetching pending service request data:", error);
 });
-});
-
-document.addEventListener('click', function(e) {
-    const profileButton = document.getElementById('profile');
-    const dropdown = document.getElementById('dropdown-menu');
-    if (!profileButton.contains(e.target)) {
-        dropdown.style.display = 'none'; // Hide dropdown when clicking outside
+  // Fetch data from the pending service requests API to count the number of pending requests
+  fetch(approvedRequestsApiUrl, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json"
     }
+})
+.then(response => response.json())
+.then(data => {
+    // Count the number of approved service requests
+    const totalApprovedRequests = data.length;
+    // Update the DOM with the total count
+    document.getElementById("approved").textContent = totalApprovedRequests;
+    document.getElementById("stock").textContent = totalApprovedRequests;
+})
+.catch(error => {
+    console.error("Error fetching approved service request data:", error);
 });
-
+  // Fetch data from the pending service requests API to count the number of pending requests
+  fetch(closedRequestsApiUrl, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+.then(response => response.json())
+.then(data => {
+    // Count the number of pending service requests
+    const totalclosedRequests = data.length;
+    document.getElementById("Closed").textContent = totalclosedRequests;})
+.catch(error => {
+    console.error("Error fetching pending service request data:", error);
+});
+});
 document.addEventListener("DOMContentLoaded", function() {
     var video = document.getElementById("background-video");
     video.playbackRate = 0.5; // Slow down the video to 50% speed
@@ -90,5 +115,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var stockCard = document.getElementById('stockcard');
 
+    // Check if the element exists before adding event listener
+    if (stockCard ) {
+        stockCard.addEventListener('click', function() {
+            console.log("Stock card clicked!"); // Debug log to verify click event
+            window.location.href = 'stockin-hand.html'; // Redirect to research.html when clicked
+        });
+    } else {
+        console.error("stock not found!"); // Log if the element is not found
+    }
+});
 
