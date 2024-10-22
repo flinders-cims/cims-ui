@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flinders Cims - Aproved Service Request</title>
     <link rel="stylesheet" href="/Css/Superviserdashboardclosed.css">
+    <link rel="stylesheet" href="/Css/pending.css">
 </head>
 <body>
     <header>
@@ -24,7 +25,7 @@
     </header>
 
 <main class="container">
-    <h2>Aproved Service Request</h2>
+    <h2>Closed Service Request</h2>
 
     <table>
         <thead>
@@ -44,6 +45,34 @@
     <div class="pagination">
         <button class="page-btn" id="prev-page">❮</button>
         <button class="page-btn" id="next-page">❯</button>
+    </div>
+    <div id="sr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="sr-close-button">&times;</span>
+            <h2>Service Request Details</h2>
+    
+            <div class="form-content">
+                <div class="form-left">
+                    <div class="value" id="SR_NO">SR_01</div>
+                    <div class="value" id="name">Staff Name: N/A</div>
+                    <div class="value" id="research">Research Title: N/A</div>
+                    <div class="value" id="date">Date: N/A</div>
+                    <div class="value" id="status">Status: N/A</div>
+                </div>
+                <div class="form-right">
+                    <div class="value" id="chemical_name">Chemical Name: N/A</div>
+                    <div class="value" id="quantity">Quantity: N/A</div>
+                    <div class="value" id="risk">Risk: N/A</div>
+                    <div class="value" id="type">Hazard Type: N/A</div>
+                    <div class="value" id="cas_number">65-65-5: N/A</div>
+                    <div class="value" id="toxic">Chemical Toxic: N/A</div>
+                    <div id="commentBox">
+                        <label for="Comment">Comment:</label>
+                        <textarea id="Comment" rows="5" placeholder="Add Comments"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
