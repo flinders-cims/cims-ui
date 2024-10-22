@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flinders Cims Supervisor Dashboard</title>
+    <link rel="stylesheet" href="/Css/HighSupervisorDashboard.css">
+</head>
+<header>
+    <div class="logo">
+        <img src="img/logo2.png" alt="Flinders Cims Logo">
+        <h1 class="logo">FlindersCIMS</h1>
+    </div>
+    <div class="header-right">
+        <a href="HighSupervisorDashboard.html" class="home-button">Home</a>
+        <a href="index.html" class="logout-button">Logout</a>
+    </div>
+
+</header>
+<body>
+<main class="video-background">
+    <video autoplay muted loop id="background-video">
+        <source src="/img/v2.mp4" type="video/mp4">
+    </video>
+    <div class="dashboard-header">
+    <div id="welcome-user-name"><h3 id="userIdDisplay"></h3></div>
+    <section class="overview">
+        <div class="card" id="addUser">
+            <p>Add User</p>
+        </div>
+        <div class="card" id="stockinhand">
+            <h2 id="stock">0</h2>
+            <p >Stock In Hand</p>
+        </div>
+    </section>
+    <div class="dashboard-header">
+    <h2>Service Request Details</h2>
+    </div>
+    <section class="overview">
+        <div class="card"> <a href="HighSupervisorDashboardpending.html" class="request-link">
+            <h2 id="pending">0</h2><p>Pending Request</p></a></div>
+    
+        <div class="card"> <a href="HighSupervisorDashboardApproved.html" class="request-link"><h2 id="approved">0</h2><p>Approved Request</p></a></div>
+        <div class="card"> <a href="HighSupervisorDashboardRejected.html" class="request-link"><h2 id="rejected">0</h2><p>Rejected Request</p></a></div>
+        <div class="card"> <a href="HighSupervisorDashboardClosed.html" class="request-link"><h2 id="Closed">0</h2><p>Closed Request</p></a></div>
+    </section>
+    </div>
+</main>
+
+
+<footer class="footer2">
+    <p>Contact us : flindersCIMS@flinders.edu.au | +61 8 8201 3911</p>
+</footer>
+
+<script src="/Javascript/HighSupervisorDashboard.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>

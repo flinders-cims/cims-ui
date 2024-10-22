@@ -37,8 +37,8 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
                     window.location.href = 'Superviserdashboard.html';
                 } else if (data.role === 'user') {
                     window.location.href = 'ResearchStaffdash.html';
-                } else if (data.role === 'highersupervisor') {
-                    window.location.href = 'HigherSupervisorDash.html';
+                } else if (data.role === 'higherapprover') {
+                    window.location.href = 'HighSupervisorDashboard.html';
                 } else {
                     console.error('Unknown role:', data.role);
                 }
