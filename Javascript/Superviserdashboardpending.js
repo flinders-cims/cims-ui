@@ -131,10 +131,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                srNumber: srId,
-                comment: comment,
+
                 status: "Approved",
-                dateApproved:today
+                dateApproved:today,
+                comment: comment
             })
         })
         .then(response => {
@@ -174,7 +174,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const messageContainer = document.getElementById('message-container');
 
-
+// Get the comment from the textarea
+        const comment = document.getElementById('Comment').value.trim();
+        if (!comment) {
+            alert('Please enter a comment.');
+            return;
+        }
         // Define the API URL for approval
         const apiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/update/${srId}`;
 
@@ -185,7 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                isSentFromSupervisor:"True"
+                isSentFromSupervisor:"True",
+                comment: comment
             })
         })
         .then(response => {

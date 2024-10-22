@@ -33,11 +33,11 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
             // Redirect to dashboard if login is successful
             if (data.role) {
                 const role = data.role.toLowerCase(); // Convert to lowercase
-                if (data.role === 'supervisor') {
+                if (role === 'supervisor') {
                     window.location.href = 'Superviserdashboard.html';
-                } else if (data.role === 'user') {
+                } else if (role === 'user') {
                     window.location.href = 'ResearchStaffdash.html';
-                } else if (data.role === 'higherapprover') {
+                } else if (role === 'higherapprover') {
                     window.location.href = 'HighSupervisorDashboard.html';
                 } else {
                     console.error('Unknown role:', data.role);

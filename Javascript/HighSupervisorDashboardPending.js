@@ -131,8 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                srNumber: srId,
-                comment: comment,
+                comment:comment,
                 status: "Approved",
                 dateApproved:today
             })
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 messageContainer.innerHTML = '<p style="color: green;">Data submitted successfully! Redirecting to dashboard...</p>';
                 setTimeout(() => {
-                    window.location.href = 'Superviserdashboard.html';
+                    window.location.href = 'HighSupervisorDashboard.html';
                 }, 3000);
             } else {
                 messageContainer.innerHTML = '<p style="color: red;">Error submitting data. Please try again.</p>';
@@ -155,55 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Approve button click handler
-    document.getElementById('higher_approve').addEventListener('click', function () {
-        handlehigher_approve();
-    });
-
-    // Function to handle the approve action
-    function handlehigher_approve() {
-        // Get the SR number from the modal
-        const srId = document.getElementById('SR_NO').innerText.replace('SR_', '').trim();
-        if (!srId) {
-            alert('Service request number is missing.');
-            return;
-        }
-
-
-        const messageContainer = document.getElementById('message-container');
-
-
-        // Define the API URL for approval
-        const apiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/update/${srId}`;
-
-        // Make a POST request to the API with the SR number and comment
-        fetch(apiUrl, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                isSentFromSupervisor:"True"
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                messageContainer.innerHTML = '<p style="color: green;">Data submitted successfully! Redirecting to dashboard...</p>';
-                setTimeout(() => {
-                    window.location.href = 'Superviserdashboard.html';
-                }, 3000);
-            } else {
-                messageContainer.innerHTML = '<p style="color: red;">Error submitting data. Please try again.</p>';
-            }
-        })
-        .catch(error => {
-            messageContainer.innerHTML = '<p style="color: red;">Failed to submit data. Please check your connection.</p>';
-
-        });
-    }
-});
 
 
 
@@ -254,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 messageContainer.innerHTML = '<p style="color: green;">Data submitted successfully! Redirecting to dashboard...</p>';
                 setTimeout(() => {
-                    window.location.href = 'Superviserdashboard.html';
+                    window.location.href = 'HighSupervisorDashboard.html';
                 }, 3000);
             } else {
                 messageContainer.innerHTML = '<p style="color: red;">Error submitting data. Please try again.</p>';

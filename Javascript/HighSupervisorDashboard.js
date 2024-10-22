@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Define the API endpoint for fetching all researches and stock data
-    const rejectedRequestsApiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/${username}/status/rejected`;
-    const pendingRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/${username}/status/pending`;
-    const approvedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/${username}/status/approved`;
-    const closedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/${username}/status/Closed`;
+    const rejectedRequestsApiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/geor6045@flinders.edu.au/status/rejected`;
+    const pendingRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/geor6045@flinders.edu.au/status/pending`;
+    const approvedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/geor6045@flinders.edu.au/status/approved`;
+    const closedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/manager/geor6045@flinders.edu.au/status/Closed`;
 
 
 
