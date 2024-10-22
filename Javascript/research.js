@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
                 <td>${research.researchId}</td>
                 <td class="research-title">${research.title}</td>
-                <td>${research.serviceRequest !== undefined ? research.serviceRequest : 'N/A'}</td>
+                <td>${research.description}</td>
                 <td>${research.startDate}</td>
                 <td>${research.expectedEndDate}</td>
                 <td>${research.status}</td>
