@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         serviceRequests.forEach(request => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${request.srId}</td> <!-- Service Request ID -->
+                <td><a href="#" class="sr-id" data-id="${request.srId}">${request.srId}</a></td>
                 <td>${request.chemical.chemicalName}</td> <!-- Chemical Name -->
                 <td>${request.research.researchId}</td> <!-- Research ID -->
                 <td>${request.dateRequested}</td> <!-- Date Requested -->
