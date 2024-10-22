@@ -83,13 +83,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const researchModal = document.getElementById('sr-modal');
         researchModal.style.display = 'block';
     }
-
-    // Function to close the modal
-    function closeForm() {
-        const researchModal = document.getElementById('sr-modal');
-        researchModal.style.display = 'none';
-    }
+    
 
     // Initial fetch of pending service requests when page loads
     fetchPendingSR();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const closeButton = document.getElementById('sr-close-button');
+    const modal = document.getElementById('sr-modal');
+    const modalContent = document.querySelector('.modal-content'); // Target the modal content
+    
+    // Close the modal when the close button is clicked
+    closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Close the modal if a click happens outside the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
