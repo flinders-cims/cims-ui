@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Define the API endpoint for fetching all researches and stock data
     const researchApiUrl = `https://flinders-cims-api-dev.azurewebsites.net/cims/research/getCount/${userId}`;
     const pendingRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/pending`;
+    const rejectedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/rejected`;
     const approvedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/approved`;
     const closedRequestsApiUrl= `https://flinders-cims-api-dev.azurewebsites.net/cims/service-requests/get-all/${userId}/status/Closed`;
 
@@ -71,6 +72,23 @@ document.addEventListener("DOMContentLoaded", function() {
     const totalApprovedRequests = data.length;
     // Update the DOM with the total count
     document.getElementById("approved").textContent = totalApprovedRequests;
+    document.getElementById("stock").textContent = totalApprovedRequests;
+})
+.catch(error => {
+    console.error("Error fetching approved service request data:", error);
+});
+fetch(rejectedRequestsApiUrl, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+.then(response => response.json())
+.then(data => {
+    // Count the number of rejected service requests
+    const totalApprovedRequests = data.length;
+    // Update the DOM with the total count
+    document.getElementById("rejected").textContent = totalApprovedRequests;
     document.getElementById("stock").textContent = totalApprovedRequests;
 })
 .catch(error => {
