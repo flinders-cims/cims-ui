@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch data from the API and populate the table
     function fetchRejectedSR() {
         const supervisor_rejected_data= localStorage.getItem('supervisor_rejected_data');
-        const parsedData = JSON.parse(supervisor_pending_data);
+        const parsedData = JSON.parse(supervisor_rejected_data);
         populateTable(parsedData);
     }
 
@@ -74,8 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     }
     
-
-
     // Initial fetch of pending service requests when page loads
     fetchRejectedSR();
 });

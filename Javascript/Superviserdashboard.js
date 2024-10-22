@@ -86,7 +86,7 @@ fetch(rejectedRequestsApiUrl , {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_approved_data', JSON.stringify(data));
+    localStorage.setItem('supervisor_rejected_data', JSON.stringify(data));
     // Count the number of pending service requests
     const totalrejectedRequests = data.length;
     document.getElementById("rejected").textContent = totalrejectedRequests;})
