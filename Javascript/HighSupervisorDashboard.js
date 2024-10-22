@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_pending_data', JSON.stringify(data));
+    const supervisorPendingData = data.filter(serviceRequest => serviceRequest.isSentFromSupervisor);
+    localStorage.setItem('supervisor_pending_data', JSON.stringify(supervisorPendingData));
 
     // Count the number of pending service requests
     const totalPendingRequests = data.length;
@@ -53,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_approved_data', JSON.stringify(data));
+    const supervisorApprovedData = data.filter(serviceRequest => serviceRequest.isSentFromSupervisor);
+    localStorage.setItem('supervisor_approved_data', JSON.stringify(supervisorApprovedData));
     // Count the number of approved service requests
     const totalApprovedRequests = data.length;
     // Update the DOM with the total count
@@ -71,7 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_closed_data', JSON.stringify(data));
+    const supervisorClosedData = data.filter(serviceRequest => serviceRequest.isSentFromSupervisor);
+    localStorage.setItem('supervisor_closed_data', JSON.stringify(supervisorClosedData));
     // Count the number of pending service requests
     const totalclosedRequests = data.length;
     document.getElementById("Closed").textContent = totalclosedRequests;})
@@ -86,7 +89,7 @@ fetch(rejectedRequestsApiUrl , {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_approved_data', JSON.stringify(data));
+    localStorage.setItem('supervisor_rejected_data', JSON.stringify(data));
     // Count the number of pending service requests
     const totalrejectedRequests = data.length;
     document.getElementById("rejected").textContent = totalrejectedRequests;})
