@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (storagelocation) {
         storagelocation.addEventListener('click', function() {
             console.log("Stock card clicked!"); // Debug log to verify click event
-            window.location.href = ''; // Redirect to research.html when clicked
+            window.location.href = 'storage_location.html'; // Redirect to research.html when clicked
         });
     } else {
         console.error("storagelocationnot found!"); // Log if the element is not found
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (stocklevel) {
         stocklevel.addEventListener('click', function() {
             console.log("Stock card clicked!"); // Debug log to verify click event
-            window.location.href = ''; // Redirect to research.html when clicked
+            window.location.href = 'stock_level.html'; // Redirect to research.html when clicked
         });
     } else {
         console.error("stocklevel found!"); // Log if the element is not found

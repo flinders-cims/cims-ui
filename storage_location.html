@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flinders Cims</title>
+    <link rel="stylesheet" href="Css/higher.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="/img/logo2.png" alt="Logo">
+                <h1>Flinders Cims</h1>
+            </div>
+            <nav>
+                <a href="#" class="user-icon"><img src="/img/U3.png" alt="User"></a>
+            </nav>
+        </header>
+        <div class="breadcrumbs">
+            <a href="Superviserdashboard.html">Dashboard</a> > Storage Location
+        </div>
+
+        <main>
+            <div class="locations">
+                <div class="location-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <!-- Front of the card -->
+                        <div class="card-front">
+                            <div class="location-icon">&#128205;</div>
+                            <p>Research Facility</p>
+                        </div>
+                        <!-- Back of the card (with details) -->
+                        <div class="card-back">
+                            <p><strong>Address:</strong> 123 Lab Street</p>
+                            <p><strong>Capacity:</strong> 5000 Units</p>
+                            <p><strong>Availabilty:</strong> 1000 Units</p>
+                            <p><strong>Supervisor:</strong> Dr. Sherin George</p>
+                            <p><strong>Contact:</strong> +123456789</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <!-- Front of the card -->
+                        <div class="card-front">
+                            <div class="location-icon">&#128205;</div>
+                            <p></p>
+                        </div>
+                        <!-- Back of the card (with details) -->
+                        <div class="card-back">
+                            <p><strong>Address:</strong> 456 Research Ave</p>
+                            <p><strong>Capacity:</strong> 8000 Units</p>
+                            <p><strong>Availabilty:</strong> 1000 Units</p>
+                            <p><strong>Supervisor:</strong> Dr. Sherin George</p>
+                            <p><strong>Contact:</strong> +987654321</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <!-- Front of the card -->
+                        <div class="card-front">
+                            <div class="location-icon">&#128205;</div>
+                            <p>Location 3</p>
+                        </div>
+                        <!-- Back of the card (with details) -->
+                        <div class="card-back">
+                            <p><strong>Address:</strong> 789 Institute Road</p>
+                            <p><strong>Capacity:</strong> 6000 Units</p>
+                            <p><strong>Availabilty:</strong> 4000 Units</p>
+                            <p><strong>Supervisor:</strong> Dr. Sherin George</p>
+                            <p><strong>Contact:</strong> +1122334455</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Storage Location Button -->
+            <div class="button-container">
+                <button class="setup-button">Setup Storage Location</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Flinders Cims. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
