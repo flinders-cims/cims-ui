@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_pending_data', data);
+    localStorage.setItem('supervisor_pending_data', JSON.stringify(data));
+
     // Count the number of pending service requests
     const totalPendingRequests = data.length;
     document.getElementById("pending").textContent = totalPendingRequests;})
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_approved_data', data);
+    localStorage.setItem('supervisor_approved_data', JSON.stringify(data));
     // Count the number of approved service requests
     const totalApprovedRequests = data.length;
     // Update the DOM with the total count
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_closed_data', data);
+    localStorage.setItem('supervisor_closed_data', JSON.stringify(data));
     // Count the number of pending service requests
     const totalclosedRequests = data.length;
     document.getElementById("Closed").textContent = totalclosedRequests;})
@@ -85,7 +86,7 @@ fetch(rejectedRequestsApiUrl , {
 })
 .then(response => response.json())
 .then(data => {
-    localStorage.setItem('supervisor_rejected_data', data);
+    localStorage.setItem('supervisor_approved_data', JSON.stringify(data));
     // Count the number of pending service requests
     const totalrejectedRequests = data.length;
     document.getElementById("rejected").textContent = totalrejectedRequests;})

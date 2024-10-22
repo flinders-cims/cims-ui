@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch data from the API and populate the table
     function fetchPendingSR() {
         const supervisor_pending_data= localStorage.getItem('supervisor_pending_data');
-        populateTable(supervisor_pending_data);
+        const parsedData = JSON.parse(supervisor_pending_data);
+        populateTable(parsedData);
     }
 
     // Function to populate the table with fetched data

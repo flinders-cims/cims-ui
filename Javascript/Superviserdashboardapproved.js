@@ -9,38 +9,37 @@ document.addEventListener('DOMContentLoaded', function () {
         const supervisor_approved_data= localStorage.getItem('supervisor_approved_data');
         // Parse the JSON string back into an object
 const parsedData = JSON.parse(supervisor_approved_data);
-
-// Now you can log the full data
-console.log(parsedData);
-        populateTable(supervisor_approved_data);
+        populateTable(parsedData);
     }
 
     // Function to populate the table with fetched data
     function populateTable(serviceRequests) {
         const tbody = document.querySelector('table tbody');
         tbody.innerHTML = ''; // Clear the table before adding new rows
-
-        // Check if there are any service requests to display
-        if (serviceRequests.length === 0) {
+    
+        // Check if serviceRequests is an array and has items
+        if (!Array.isArray(serviceRequests) || serviceRequests.length === 0) {
             const row = document.createElement('tr');
-            row.innerHTML = `<td colspan="5">No Pending Service Requests Found</td>`;
+            row.innerHTML = `<td colspan="5">No Approved Service Requests Found</td>`;
             tbody.appendChild(row);
             return;
         }
-
+    
         // Loop through the service requests and create table rows
         serviceRequests.forEach(request => {
             const row = document.createElement('tr');
+            // Use optional chaining (?.) to safely access nested properties
             row.innerHTML = `
-                <td>${request.srId}</td> <!-- Service Request ID -->
-                <td>${request.chemical.chemicalName}</td> <!-- Chemical Name -->
-                <td>${request.research.researchId}</td> <!-- Research ID -->
-                <td>${request.dateRequested}</td> <!-- Date Requested -->
-                <td>${request.riskLevel}</td> <!-- Risk Level -->
+                <td>${request.srId || 'N/A'}</td> <!-- Service Request ID -->
+                <td>${request.chemical?.chemicalName || 'N/A'}</td> <!-- Chemical Name -->
+                <td>${request.research?.researchId || 'N/A'}</td> <!-- Research ID -->
+                <td>${request.dateRequested || 'N/A'}</td> <!-- Date Requested -->
+                <td>${request.riskLevel || 'N/A'}</td> <!-- Risk Level -->
             `;
             tbody.appendChild(row);
         });
     }
+    
 
     // Initial fetch of pending service requests when page loads
     fetchApprovedSR();
