@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flinders Cims Research Dashboard</title>
-    <link rel="stylesheet" href="/Css/ResearchStaffdash.css">
+    <title>Flinders Cims Supervisor Dashboard</title>
+    <link rel="stylesheet" href="/Css/Superviserdashboard.css">
 </head>
 <header>
     <div class="logo">
@@ -12,40 +12,38 @@
         <h1 class="logo">FlindersCIMS</h1>
     </div>
     <div class="header-right">
-        <a href="ResearchStaffdash.html" class="home-button">Home</a>
+        <a href="Superviserdashboard.html" class="home-button">Home</a>
         <a href="index.html" class="logout-button">Logout</a>
     </div>
 
 </header>
 <body>
 <main class="video-background">
-    <div class="overlay"></div>
     <video autoplay muted loop id="background-video">
         <source src="/img/v2.mp4" type="video/mp4">
     </video>
     <div class="dashboard-header">
     <div id="welcome-user-name"><h3 id="userIdDisplay"></h3></div>
     <section class="overview">
-        <div class="card" id="researchCard">
-            <h2>0</h2>
-            <p>Researches</p>
+        <div class="card" id="storagelocation">
+            <h2>3</h2>
+            <p>Storage Location</p>
         </div>
-        <div class="card">
-            <h2>0</h2>
-            <p id="stock">Stock In Hand</p>
+        <div class="card" id="stocklevel">
+            <h2 id="stock">0</h2>
+            <p >Stock Level</p>
         </div>
     </section>
     <div class="dashboard-header">
     <h2>Service Request Details</h2>
     </div>
     <section class="overview">
-
-        <div class="request-card"><a href="NewSR.html" class="request-link">Create Request</a></div>
-        <div class="card"> <a href="pending.html" class="request-link">
+        <div class="card"> <a href="Superviserdashboardpending.html" class="request-link">
             <h2 id="pending">0</h2><p>Pending Request</p></a></div>
     
-        <div class="card"> <a href="Approved.html" class="request-link"><h2 id="approved">0</h2><p>Approved Request</p></a></div>
-        <div class="card"> <a href="Closed.html" class="request-link"><h2 id="closed">0</h2><p>Closed Request</p></a></div>
+        <div class="card"> <a href="SuperviserdashboardApproved.html" class="request-link"><h2 id="approved">0</h2><p>Approved Request</p></a></div>
+        <div class="card"> <a href="SuperviserdashboardRejected.html" class="request-link"><h2 id="rejected">0</h2><p>Rejected Request</p></a></div>
+        <div class="card"> <a href="SuperviserdashboardClosed.html" class="request-link"><h2 id="Closed">0</h2><p>Closed Request</p></a></div>
     </section>
     </div>
 </main>
@@ -55,7 +53,7 @@
     <p>Contact us : flindersCIMS@flinders.edu.au | +61 8 8201 3911</p>
 </footer>
 
-<script src="/Javascript/ResearchStaffdash.js"></script>
+<script src="/Javascript/Superviserdashboard.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </body>

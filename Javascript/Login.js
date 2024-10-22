@@ -26,11 +26,23 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     .then(data => {
         if (data.userId) { // Assuming a valid response contains userId
             // Store userId and userName in localStorage
+            localStorage.setItem('username', data.username);
             localStorage.setItem('userId', data.userId);
             localStorage.setItem("userName", data.firstName + " " + data.lastName);
             localStorage.setItem("managerUserName",data.managerUserName);
             // Redirect to dashboard if login is successful
-            window.location.href = 'ResearchStaffdash.html';
+            if (data.role) {
+                const role = data.role.toLowerCase(); // Convert to lowercase
+                if (data.role === 'supervisor') {
+                    window.location.href = 'Superviserdashboard.html';
+                } else if (data.role === 'user') {
+                    window.location.href = 'ResearchStaffdash.html';
+                } else if (data.role === 'highersupervisor') {
+                    window.location.href = 'HigherSupervisorDash.html';
+                } else {
+                    console.error('Unknown role:', data.role);
+                }
+            }
         }
     })
     .catch(error => {
