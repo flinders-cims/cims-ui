@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+/* Header Styles */
+.header {
+    background-color: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1px;
+}
+
+.logo {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo img {
+    height: 70px;
+    WIDTH: 70px;
+
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.power-btn, .user-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin-left: 10px;
+}
+.container {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Form Container Styles */
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width:700px;
+    max-width: 100%;
+
+
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+.image-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.image-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.footer2 {
+    background-color: #002855;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.footer2 p {
+    margin: 0;
+    padding: 8px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.breadcrumb {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #444;
+}
+
+.submit {
+    text-align: center;
+}
+/* Stylish Submit Button */
+.submit-btn {
+    background-color: #0e06ff;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+}
+
+/* Hover Effect */
+.submit-btn:hover {
+    background-color: #3700b3; /* Darker purple on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+/* Focus Effect */
+.submit-btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5); /* Purple outline */
+}

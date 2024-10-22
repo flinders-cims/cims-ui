@@ -109,26 +109,26 @@ document.querySelector(".logout-button").addEventListener('click', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var storagelocation= document.getElementById('storagelocation');
+    var addUser= document.getElementById('addUser');
 
     // Check if the element exists before adding event listener
-    if (storagelocation) {
-        storagelocation.addEventListener('click', function() {
-            console.log("Stock card clicked!"); // Debug log to verify click event
-            window.location.href = ''; // Redirect to research.html when clicked
+    if (addUser) {
+        addUser.addEventListener('click', function() {
+            console.log("Add user card clicked!"); // Debug log to verify click event
+            window.location.href = 'userList.html'; // Redirect to research.html when clicked
         });
     } else {
         console.error("storagelocationnot found!"); // Log if the element is not found
     }
 });
 document.addEventListener('DOMContentLoaded', function() {
-    var stocklevel= document.getElementById('stocklevel');
+    var stockinhand= document.getElementById('stockinhand');
 
     // Check if the element exists before adding event listener
-    if (stocklevel) {
-        stocklevel.addEventListener('click', function() {
+    if (stockinhand) {
+        stockinhand.addEventListener('click', function() {
             console.log("Stock card clicked!"); // Debug log to verify click event
-            window.location.href = ''; // Redirect to research.html when clicked
+            window.location.href = 'stock_level.html'; // Redirect to research.html when clicked
         });
     } else {
         console.error("stocklevel found!"); // Log if the element is not found

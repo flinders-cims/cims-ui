@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flinders Cims</title>
+    <link rel="stylesheet" href="Css/AddUserList.css">
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <img src="img/logo2.png" alt="Flinders Cims">
+        <h1>Flinders Cims</h1>
+    </div>
+    <div class="header-right">
+        <a href="HighAdash.html" class="dashboard-link">Dashboard</a>
+        <a href="index.html" class="image-button"><img src="img/out.png" alt="Dashboard">Dashboard</a>
+        <div class="user-icon">👤</div>
+    </div>
+</div>
+<div class="container">
+    <div class="breadcrumb">
+        Dashboard &gt; User List
+        <div class="add-button">
+            <a href="AddUserForm.html">
+                <button>+ ADD</button>
+            </a>
+        </div>
+        
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>ROLE</th>
+            <th>First Name</th>
+            <th>Email ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td colspan="5"></td></tr>
+        <tr><td colspan="5"></td></tr>
+        <tr><td colspan="5"></td></tr>
+        <tr><td colspan="5"></td></tr>
+        <tr><td colspan="5"></td></tr>
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button class="page-btn">❯</button>
+    </div>
+</div>
+<footer class="footer2">
+    <p>Contact us at: flindersCIMS@flinders.edu.au | +61 8 8201 3911</p>
+</footer>
+
+<script>
+// JavaScript code to fetch and display data from the API
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to fetch user data from the API
+    function fetchUsers() {
+        fetch('https://flinders-cims-api-dev.azurewebsites.net/cims/users/all')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                populateTable(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    // Function to populate the table with user data
+    function populateTable(users) {
+        const tbody = document.querySelector('table tbody');
+        tbody.innerHTML = ''; // Clear existing table rows
+
+        // Loop through each user and create a row
+        users.forEach(user => {
+            const row = document.createElement('tr');
+            
+            // Add table data (td) for each column based on the updated API response
+            row.innerHTML = `
+                <td><a href="userDetails.html?userId=${user.userId}">${user.userId}</a></td>
+                <td>${user.username}</td>
+                <td>${user.role}</td>
+                <td>${user.firstName}</td>
+                <td>${user.emailId}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    // Fetch users when the page loads
+    fetchUsers();
+});
+</script>
+
+</body>
+</html>
