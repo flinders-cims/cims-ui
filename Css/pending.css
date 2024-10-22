@@ -203,3 +203,168 @@ footer {
         font-size: 12px;
     }
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submit-btn {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Container for the form */
+.container {
+    height: 200%;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 20px;
+    width: 100%;
+    height: 500%;
+    display: flex;
+}
+
+#SR_NO {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form Content */
+.form-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between left and right sections */
+}
+
+.form-left,
+.form-right {
+    width: 48%; /* Make sure each section takes almost half of the container */
+}
+
+.value {
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+
+/* Comment Box */
+#commentBox {
+    margin-top: 15px;
+}
+
+textarea {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Buttons next to the comment box */
+.submit {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center; /* Center the buttons */
+        gap: 10px; /* Space between buttons */
+    }
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1; /* Allow buttons to expand and take available space */
+    text-align: center;
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
+}
+
+/* Specific styling for the Reject button */
+#reject {
+    background-color: #ff4d4d;
+}
+
+#reject:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer2 {
+    background-color: #002855;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer2 p {
+    margin: 0;
+}
+.form-header {
+    position: relative;
+}
+
+.close-btn {
+    top: 10px;
+    left: 50px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
