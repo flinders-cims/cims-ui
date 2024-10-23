@@ -57,7 +57,8 @@ const parsedData = JSON.parse(supervisor_approved_data);
                     document.getElementById('SR_NO').innerText = `SR_${data.srId}`;
                     document.getElementById('chemical_name').innerText = `Chemical Name: ${data.chemical.chemicalName}`;
                     document.getElementById('research').innerText = `Research Title: ${data.research.title}`;
-                    document.getElementById('date').innerText = `Date: ${data.dateRequested}`;
+                    document.getElementById('date').innerText = `Date Created: ${data.dateRequested}`;
+                    document.getElementById('approved_date').innerText = `Date Approved: ${data.dateApproved}`;
                     document.getElementById('quantity').innerText = `Quantity: ${data.quantityRequested} ${data.unitOfQuantity}`;
                     document.getElementById('name').innerText = `Staff Name: ${data.user.firstName} ${data.user.lastName}`;
                     document.getElementById('status').innerText = `Status: ${data.status}`;
@@ -66,6 +67,7 @@ const parsedData = JSON.parse(supervisor_approved_data);
                     document.getElementById('toxic').innerText = `Chemical Toxic: ${data.isToxic ? 'Yes' : 'No'}`;
                     document.getElementById('cas_number').innerText = `Cas number: ${data.casNumber}`;
                     document.getElementById('Comment').innerText = `${data.approverComment}`;
+                    document.getElementById('approved_date').innerText = `${data.dateApproved}`;
                 })
                 .catch(error => console.error('Error fetching SR details:', error));
         }
