@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         users.forEach(user => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td><a href="userDetails.html?userId=${user.userId}">${user.userId}</a></td>
+                <td><a href="userDetails.html?userId=${userId}" target="_self">${userId}</a></td>
                 <td>${user.username}</td>
                 <td>${user.role}</td>
                 <td>${user.firstName}</td>
