@@ -32,19 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             tableBody.appendChild(row);
 
-            // Add click event listener to the chemical ID cell
-            row.querySelector('.clickable-id').addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent page refresh
-                const chemicalId = row.querySelector('.clickable-id').getAttribute('data-chemical-id');
-                window.location.href = `chemical-details.html?id=${chemicalId}`;
-            });
-
-            // Add click event listener to the research ID cell
-            row.querySelector('.clickable-research-id').addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent page refresh
-                const researchId = row.querySelector('.clickable-research-id').getAttribute('data-research-id');
-                window.location.href = `research-details.html?id=${researchId}`;
-            });
 
             // Add click event listener to the service request ID cell
             row.querySelector('.clickable-sr-id').addEventListener('click', (event) => {

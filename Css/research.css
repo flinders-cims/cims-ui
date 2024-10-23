@@ -8,48 +8,53 @@ html {
     background-color: #f5f5f5;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #003366;
-    color: white;
-    padding: 5px 10px; /* Reduced padding */
+    padding: 0 5px;
+    background: linear-gradient(90deg, #FFCC00, rgba(0, 40, 85, 0.7));
+    color: #000000;
 }
 
-
 .logo {
+    height: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
+   justify-content: center;
+}
+h1{
+    margin: 0;
+}
+
+#welcome-user-name {
+    margin: 0px 20px;
 }
 
 .logo img {
-    height: 30px; /* Reduced logo size */
+    height: 90px;
+    WIDTH: 90px;
     margin-right: 10px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav a {
+.header-right a {
+    margin-left: 20px;
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
 }
 
-.user-icon img {
-    height: 30px; /* Reduced user icon size */
-    border-radius: 50%;
+.dashboard-header {
+    margin: 5px;
+    color: white;
+    margin: 0px 30px;
 }
 
 .breadcrumbs {

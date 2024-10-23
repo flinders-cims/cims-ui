@@ -46,13 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tableBody.appendChild(row);
         });
 
-        // Add click event to research titles to navigate to the details page
-        const researchTitles = document.querySelectorAll('.research-title');
-        researchTitles.forEach(title => {
-            title.addEventListener('click', () => {
-                window.location.href = 'research-details.html'; // Replace with your details page URL
-            });
-        });
+      ;
 
         const totalPages = Math.ceil(researchData.length / rowsPerPage);
 
