@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById('chemical_name').innerText = `Chemical Name: ${data.chemical.chemicalName}`;
                     document.getElementById('research').innerText = `Research Title: ${data.research.title}`;
                     document.getElementById('date').innerText = `Date Created: ${data.dateRequested}`;
+                    document.getElementById('approved_date').innerText = `Date Created: ${data.dateApproved}`;
                     document.getElementById('quantity').innerText = `Quantity: ${data.quantityRequested} ${data.unitOfQuantity}`;
                     document.getElementById('name').innerText = `Staff Name: ${data.user.firstName} ${data.user.lastName}`;
                     document.getElementById('status').innerText = `Status: ${data.status}`;
