@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                comment:comment,
+                comment:approverComment,
                 status: "Approved",
                 dateApproved:today
             })
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                comment: comment,
+                comment: approverComment,
                 status: "Rejected",
                 dateRejected:today
             })

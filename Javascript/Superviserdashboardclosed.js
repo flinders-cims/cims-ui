@@ -65,6 +65,7 @@ const parsedData = JSON.parse(supervisor_closed_data);
                 document.getElementById('type').innerText = `Hazard Type: ${data.hazardType}`;
                 document.getElementById('toxic').innerText = `Chemical Toxic: ${data.isToxic ? 'Yes' : 'No'}`;
                 document.getElementById('cas_number').innerText = `Cas number: ${data.casNumber}`;
+                document.getElementById('Comment').innerText = `${data.approverComment}`;
             })
             .catch(error => console.error('Error fetching SR details:', error));
     }
