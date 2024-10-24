@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 status: "Approved",
                 dateApproved:today,
-                comment: approverComment
+                approverComment: comment
             })
         })
         .then(response => {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify({
                 isSentFromSupervisor:"True",
-                comment: approverComment
+                approverComment: comment
             })
         })
         .then(response => {
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                comment: approverComment,
+                approverComment: comment,
                 status: "Rejected",
                 dateRejected:today
             })
