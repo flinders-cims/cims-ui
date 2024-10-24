@@ -30,6 +30,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
             localStorage.setItem('userId', data.userId);
             localStorage.setItem("userName", data.firstName + " " + data.lastName);
             localStorage.setItem("managerUserName",data.managerUserName);
+            localStorage.setItem("userrole",data.role);
             // Redirect to dashboard if login is successful
             if (data.role) {
                 const role = data.role.toLowerCase(); // Convert to lowercase

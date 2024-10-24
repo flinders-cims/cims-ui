@@ -15,6 +15,8 @@ async function fetchUserDetails() {
             document.getElementById('lastname').innerText = userData.lastName;
             document.getElementById('phonenumber').innerText = userData.phoneNumber;
             document.getElementById('emailid').innerText = userData.emailId;
+                               // Set the user image based on the role
+                               setUserImage(userData.role);
         } else {
             console.error('Failed to fetch user data');
         }
@@ -22,6 +24,25 @@ async function fetchUserDetails() {
         console.error('Error fetching user details:', error);
     }
 }
+
+        // Function to set the user image based on the role
+        function setUserImage(userRole) {
+            const userImage = document.getElementById('userImage');
+            let imageName = '';
+
+            // Determine the image based on the role
+            if (userRole === 'user') {
+                imageName = 'aswin.jpg'; // Image for a regular user
+            } else if (userRole === 'supervisor') {
+                imageName = 'sherin.jpg'; // Image for a supervisor
+            } else if (userRole === 'higherapprover') {
+                imageName = 'evelyn.jpg'; // Image for a higher supervisor
+            }
+
+            // Set the image source
+            userImage.src = `./img/${imageName}`;
+        }
+
 
 // Function to delete the user
 async function deleteUser() {
